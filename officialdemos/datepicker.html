@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Demo DatePicker</title>
+    <link href="../styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="../styles/kendo.default.min.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/kendo.all.min.js"></script>
+</head>
+<body>
+    <div id="example" class="k-content">
+        <div class="email-settings">
+            <div id="date">
+                <input id="datepicker" />
+            </div>
+            <div id="month">
+                <input id="monthpicker" value="Novmber 2011" />
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                var myDate = new Date();
+                //Create DatePicker form input HTML element
+                $("#datepicker").kendoDatePicker({
+                    value: myDate,
+                    min: myDate,
+                    max: new Date(myDate.getFullYear(), myDate.getMonth() + 1, myDate.getDate())
+                });
+                $("#monthpicker").kendoDatePicker({
+                    //defines the start view
+                    start: "year",
+                    //defines when the calendar should return date
+                    depth: "year",
+                    //defines month and year in the input
+                    format: "MMMM yyyy"
+                });
+            });
+        </script>
+        <style scoped>
+            #example h2 {
+                font-weight: normal;
+            }
+
+            .email-settings {
+                height: 135px;
+                width: 395px;
+                margin: 30px auto;
+                padding: 110px 0 0 30px;
+                background: url('../content/web/datepicker/mailSettings.png') transparent no-repeat 0 0;
+                font-size: x-small;
+            }
+
+            #date {
+                margin-top: -6px;
+                margin-left: 180px;
+            }
+
+            #datepicker {
+                width: 150px;
+            }
+
+            #month {
+                margin-top: 59px;
+                margin-left: 180px;
+            }
+
+            #monthpicker {
+                width: 150px;
+            }
+        </style>
+    </div>
+</body>
+</html>
