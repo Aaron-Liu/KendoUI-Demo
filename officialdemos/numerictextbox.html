@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Demo NumericTextBox</title>
+    <link href="../styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="../styles/kendo.default.min.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/kendo.all.min.js"></script>
+</head>
+<body>
+    <div id="example" class="k-content">
+        <div id="add-product">
+            <div>
+                <input id="currency" type="number" value="30" min="0" max="100" />
+            </div>
+            <div style="margin-top:7px">
+                <input id="percentage" value="0.05" />
+            </div>
+            <div style="margin-top:7px">
+                <input id="custom" value="2" />
+            </div>
+            <div style="margin-top:7px">
+                <input id="numeric" type="number" value="17" min="0" max="100" step="1" />
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                //create NumericTextBox from input HTML element
+                $("#numeric").kendoNumericTextBox();
+                //create Currency NumericTextBox from input HTML element
+                $("#currency").kendoNumericTextBox({
+                    format: "c",
+                    decimals:3
+                });
+                //create Percentage NumericTextBox from input HTML element
+                $("#percentage").kendoNumericTextBox({
+                    format: "p0",
+                    min: 0,
+                    max: 0.1,
+                    step: 0.01
+                });
+                //create NumericTextBox from input HTML element
+                $("#custom").kendoNumericTextBox({
+                    format:"#.00kg"
+                });
+            });
+        </script>
+        <style scoped>
+            #add-product {
+                font-size:x-small;
+                height:181px;
+                width:252px;
+                margin:30px auto;
+                padding:64px 0 0 143px;
+                background:url('../content/web/numerictextbox/addProduct.png') transparent no-repeat 0 0;
+            }
+        </style>
+    </div>
+</body>
+</html>
